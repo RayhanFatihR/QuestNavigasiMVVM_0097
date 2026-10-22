@@ -2,9 +2,13 @@ package com.example.pertemuan6.view
 
 import android.R
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -26,7 +30,7 @@ fun FormIsian(
                 title = {Text(stringResource("Form Isian"), color = Color.White )},
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     colorResource(R.color.teal_700))
-            ) }
+            )
 }   ) { isiRuang ->
         Column(modifier = Modifier.padding(isiRuang),
             verticalArrangement = Arrangement.Top,
@@ -36,7 +40,13 @@ fun FormIsian(
                 singleLine = true,
                 modifier = Modifier
                     .padding(top = 10.dp)
+                    .width(250.dp),
+                label = {Text(text = "Nama Lengkap")},
+                onValueChange = {},
             )
+            HorizontalDivider(modifier = Modifier
+                .padding(20.dp)
+                .width(250.dp), )
         }
 
     }
